@@ -2,30 +2,30 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Altas de Involucrados</title>
+  <title>Involucrados</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Altas de Involucrados</h1>
+  <div class="container">
+    <h2>Agregar Involucrado</h2>
+    <form id="form-involucrado" class="formulario">
+      <input name="nombre" placeholder="Nombre completo" required>
+      <select name="tipo" required>
+        <option disabled selected>Selecciona el tipo</option>
+        <option>Estudiante</option>
+        <option>Docente</option>
+        <option>Administrativo</option>
+        <option>Directivo</option>
+      </select>
+      <input name="numero" placeholder="Número de contacto" required>
+      <input name="correo" type="email" placeholder="Correo electrónico" required>
+      <input name="edad" type="number" placeholder="Edad" required>
+      <button type="submit">Guardar</button>
+    </form>
 
-  <form id="form-involucrado">
-    <input name="nombre" placeholder="Nombre completo" required><br>
-    <select name="tipo" required>
-      <option value="">Seleccionar tipo</option>
-      <option value="Estudiante">Estudiante</option>
-      <option value="Docente">Docente</option>
-      <option value="Administrativo">Administrativo</option>
-      <option value="Directivo">Directivo</option>
-    </select><br>
-    <input name="numero" placeholder="Teléfono" required><br>
-    <input name="correo" placeholder="Correo" required><br>
-    <input name="edad" type="number" placeholder="Edad" required><br>
-    <button>Guardar</button>
-  </form>
-
-  <h2>Involucrados Registrados</h2>
-  <ul id="listaInvolucrados"></ul>
-
+    <h3>Lista de Involucrados</h3>
+    <ul id="listaInvolucrados" class="lista"></ul>
+  </div>
   <script src="script/involucrados.js"></script>
 </body>
 </html>
