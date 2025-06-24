@@ -2,26 +2,45 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Involucrados</title>
+  <title>Gestión de Involucrados</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Altas de Involucrados</h2>
+  <h1>👥 Registro de Involucrados</h1>
+
+  <nav>
+    <a href="index.html">🏠 Menú Principal</a>
+  </nav>
+
+  <h2>Agregar Involucrado</h2>
   <form id="form-involucrado">
-    <input name="nombre" placeholder="Nombre completo"><br>
-    <select name="tipo">
+    <input name="nombre" placeholder="Nombre" required><br>
+    <select name="tipo" required>
+      <option value="">Seleccione tipo</option>
       <option>Estudiante</option>
       <option>Docente</option>
       <option>Administrativo</option>
       <option>Directivo</option>
     </select><br>
-    <input name="numero" placeholder="Teléfono"><br>
-    <input name="correo" placeholder="Correo"><br>
-    <input name="edad" type="number" placeholder="Edad"><br>
+    <input name="numero" placeholder="Número" required><br>
+    <input name="correo" placeholder="Correo" type="email" required><br>
+    <input name="edad" type="number" placeholder="Edad" required><br>
     <button type="submit">Guardar</button>
   </form>
 
-  <h2>Involucrados Registrados</h2>
-  <ul id="listaInvolucrados"></ul>
+  <h2>Lista de Involucrados</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Teléfono</th>
+        <th>Correo</th>
+        <th>Edad</th>
+      </tr>
+    </thead>
+    <tbody id="tablaInvolucrados"></tbody>
+  </table>
 
   <script src="script/involucrados.js"></script>
 </body>
