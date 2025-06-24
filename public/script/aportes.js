@@ -1,24 +1,15 @@
-async function cargarNombres() {
-  const res = await fetch('/api/involucrados');
-  const datos = await res.json();
-  const select = document.getElementById('select-nombre');
-  datos.forEach(i => {
-    const option = document.createElement('option');
-    option.value = i.nombre;
-    option.textContent = i.nombre;
-    select.appendChild(option);
-  });
-}
-
 document.getElementById('form-aporte').addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target));
+
   const res = await fetch('/api/aportes', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
-  if (res.status === 400) return alert('Nombre no registrado');
+
+  if (res.status === 400) return alert('❌ El nombre no está registrado en involucrados.');
+  
   e.target.reset();
   cargarAportes();
 });
@@ -45,5 +36,4 @@ async function cargarAportes() {
   });
 }
 
-cargarNombres();
 cargarAportes();
