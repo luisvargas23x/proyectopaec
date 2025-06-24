@@ -1,0 +1,23 @@
+{
+  "name": "reciclaje-paec",
+  "version": "1.0.0",
+  "description": "Sistema para el monitoreo del reciclaje escolar (PAEC)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "reciclaje",
+    "escuela",
+    "nodejs",
+    "mongodb",
+    "paec"
+  ],
+  "author": "Luis Vargas",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.1"
+  }
+}
