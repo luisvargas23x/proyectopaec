@@ -1,15 +1,47 @@
-<h2>Lista de Aportes</h2>
-<table border="1">
-  <thead>
-    <tr>
-      <th>Tipo</th>
-      <th>Material</th>
-      <th>Estado</th>
-      <th>Kilos</th>
-      <th>Lugar</th>
-      <th>Fecha</th>
-      <th>Hora</th>
-    </tr>
-  </thead>
-  <tbody id="tablaAportes"></tbody>
-</table>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Aportes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>♻️ Registro de Aportes</h1>
+
+  <nav>
+    <a href="index.html">🏠 Menú Principal</a>
+  </nav>
+
+  <h2>Agregar Aporte</h2>
+  <form id="form-aporte">
+    <input name="nombre" placeholder="Nombre del participante" required><br>
+    <input name="tipo" placeholder="Tipo (Estudiante, Docente...)" required><br>
+    <input name="material" placeholder="Tipo de material" required><br>
+    <input name="estadoMaterial" placeholder="Estado (Limpio, Sucio...)" required><br>
+    <input name="kilos" type="number" placeholder="Kilos reciclados" required><br>
+    <input name="lugarRecoleccion" placeholder="Lugar de recolección" required><br>
+    <input name="fechaEntrega" type="date" required><br>
+    <input name="horaEntrega" type="time" required><br>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <h2>Lista de Aportes</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Material</th>
+        <th>Estado</th>
+        <th>Kilos</th>
+        <th>Lugar</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+      </tr>
+    </thead>
+    <tbody id="tablaAportes"></tbody>
+  </table>
+
+  <script src="script/aportes.js"></script>
+</body>
+</html>
