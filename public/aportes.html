@@ -14,7 +14,9 @@
 
   <h2>Agregar Aporte</h2>
   <form id="form-aporte">
-    <input name="nombre" placeholder="Nombre del participante" required><br>
+    <!-- Campo oculto de nombre -->
+    <input name="nombre" type="hidden" value="anonimo">
+
     <input name="tipo" placeholder="Tipo (Estudiante, Docente...)" required><br>
     <input name="material" placeholder="Tipo de material" required><br>
     <input name="estadoMaterial" placeholder="Estado (Limpio, Sucio...)" required><br>
@@ -29,7 +31,6 @@
   <table border="1">
     <thead>
       <tr>
-        <th>Nombre</th>
         <th>Tipo</th>
         <th>Material</th>
         <th>Estado</th>
@@ -45,3 +46,4 @@
   <script src="script/aportes.js"></script>
 </body>
 </html>
+
