@@ -1,12 +1,12 @@
-async function cargarInvolucrados() {
+async function cargarNombres() {
   const res = await fetch('/api/involucrados');
-  const lista = await res.json();
+  const datos = await res.json();
   const select = document.getElementById('select-nombre');
-  lista.forEach(i => {
-    const opt = document.createElement('option');
-    opt.value = i.nombre;
-    opt.textContent = i.nombre;
-    select.appendChild(opt);
+  datos.forEach(i => {
+    const option = document.createElement('option');
+    option.value = i.nombre;
+    option.textContent = i.nombre;
+    select.appendChild(option);
   });
 }
 
@@ -18,10 +18,7 @@ document.getElementById('form-aporte').addEventListener('submit', async (e) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
-  if (res.status === 400) {
-    alert('El nombre no está registrado en Involucrados');
-    return;
-  }
+  if (res.status === 400) return alert('Nombre no registrado');
   e.target.reset();
   cargarAportes();
 });
@@ -29,14 +26,24 @@ document.getElementById('form-aporte').addEventListener('submit', async (e) => {
 async function cargarAportes() {
   const res = await fetch('/api/aportes');
   const datos = await res.json();
-  const lista = document.getElementById('listaAportes');
-  lista.innerHTML = '';
+  const tabla = document.getElementById('tablaAportes');
+  tabla.innerHTML = '';
+
   datos.forEach(a => {
-    const li = document.createElement('li');
-    li.textContent = `${a.nombre} - ${a.kilos}kg de ${a.material} en ${a.lugarRecoleccion}`;
-    lista.appendChild(li);
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${a.nombre}</td>
+      <td>${a.tipo}</td>
+      <td>${a.material}</td>
+      <td>${a.estadoMaterial}</td>
+      <td>${a.kilos}</td>
+      <td>${a.lugarRecoleccion}</td>
+      <td>${a.fechaEntrega}</td>
+      <td>${a.horaEntrega}</td>
+    `;
+    tabla.appendChild(row);
   });
 }
 
-cargarInvolucrados();
+cargarNombres();
 cargarAportes();
