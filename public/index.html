@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Menú</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h1>Sistema PAEC</h1>
+  <nav>
+    <ul>
+      <li><a href="involucrados.html">Involucrados</a></li>
+      <li><a href="aportes.html">Aportes</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
+
+// public/involucrados.html
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Involucrados</title></head>
+<body>
+  <h2>Agregar Involucrado</h2>
+  <form id="form-involucrado">
+    <input name="nombre" placeholder="Nombre"><br>
+    <select name="tipo">
+      <option>Estudiante</option><option>Docente</option><option>Administrativo</option><option>Directivo</option>
+    </select><br>
+    <input name="numero" placeholder="Número"><br>
+    <input name="correo" placeholder="Correo"><br>
+    <input name="edad" type="number" placeholder="Edad"><br>
+    <button>Guardar</button>
+  </form>
+  <ul id="listaInvolucrados"></ul>
+  <script src="script/involucrados.js"></script>
+</body>
+</html>

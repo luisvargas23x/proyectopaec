@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Involucrados</title>
+</head>
+<body>
+  <h2>Altas de Involucrados</h2>
+  <form id="form-involucrado">
+    <input name="nombre" placeholder="Nombre completo"><br>
+    <select name="tipo">
+      <option>Estudiante</option>
+      <option>Docente</option>
+      <option>Administrativo</option>
+      <option>Directivo</option>
+    </select><br>
+    <input name="numero" placeholder="Teléfono"><br>
+    <input name="correo" placeholder="Correo"><br>
+    <input name="edad" type="number" placeholder="Edad"><br>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <h2>Involucrados Registrados</h2>
+  <ul id="listaInvolucrados"></ul>
+
+  <script src="script/involucrados.js"></script>
+</body>
+</html>
