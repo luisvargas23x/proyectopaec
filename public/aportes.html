@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head><meta charset="UTF-8"><title>Aportes</title></head>
-<body>
-  <h2>Agregar Aporte</h2>
-  <form id="form-aporte">
-    <select name="nombre" id="select-nombre"></select><br>
-    <input name="material" placeholder="Material"><br>
-    <input name="kilos" type="number" placeholder="Kilos"><br>
-    <input name="estadoMaterial" placeholder="Estado"><br>
-    <input name="lugarRecoleccion" placeholder="Lugar"><br>
-    <input name="fechaEntrega" type="date"><br>
-    <input name="horaEntrega" type="time"><br>
-    <button>Guardar</button>
-  </form>
-  <ul id="listaAportes"></ul>
-  <script src="script/aportes.js"></script>
-</body>
-</html>
+<h2>Lista de Aportes</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Material</th>
+      <th>Estado</th>
+      <th>Kilos</th>
+      <th>Lugar</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+    </tr>
+  </thead>
+  <tbody id="tablaAportes"></tbody>
+</table>
