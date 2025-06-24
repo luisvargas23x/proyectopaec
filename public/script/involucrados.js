@@ -1,39 +1,33 @@
-async function cargarNombres() {
-  const res = await fetch('/api/involucrados');
-  const datos = await res.json();
-  const select = document.getElementById('select-nombre');
-  datos.forEach(i => {
-    const option = document.createElement('option');
-    option.value = i.nombre;
-    option.textContent = i.nombre;
-    select.appendChild(option);
-  });
-}
-
-document.getElementById('form-aporte').addEventListener('submit', async (e) => {
+document.getElementById('form-involucrado').addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target));
-  const res = await fetch('/api/aportes', {
+  await fetch('/api/involucrados', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
-  if (res.status === 400) return alert('Nombre no registrado');
   e.target.reset();
-  cargarAportes();
+  cargarInvolucrados();
 });
 
-async function cargarAportes() {
-  const res = await fetch('/api/aportes');
+async function cargarInvolucrados() {
+  const res = await fetch('/api/involucrados');
   const datos = await res.json();
-  const lista = document.getElementById('listaAportes');
-  lista.innerHTML = '';
-  datos.forEach(a => {
-    const li = document.createElement('li');
-    li.textContent = `${a.nombre} entregó ${a.kilos}kg de ${a.material} en ${a.lugarRecoleccion}`;
-    lista.appendChild(li);
+  const tabla = document.getElementById('tablaInvolucrados');
+  tabla.innerHTML = '';
+
+  datos.forEach(i => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${i.nombre}</td>
+      <td>${i.tipo}</td>
+      <td>${i.numero}</td>
+      <td>${i.correo}</td>
+      <td>${i.edad}</td>
+    `;
+    tabla.appendChild(row);
   });
 }
 
-cargarNombres();
-cargarAportes();
+cargarInvolucrados();
+
